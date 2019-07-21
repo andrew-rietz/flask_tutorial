@@ -6,12 +6,12 @@ For this tutorial I created an app called **our_flask_app**. The tutorial uses
 a SQLite database for simplicity.
 
 ## Table of Contents
-1. [Application Setup](application-setup)
-2. [Define and Access Database](define-and-access-database)
-3. [Blueprints and Views](blueprints-and-views)
-4. [Templates](templates)
-5. [Static Files](static-files)
-6. [A Second Blueprint](a-second-blueprint)
+1. [Application Setup](#application-setup)
+2. [Define and Access Database](#define-and-access-database)
+3. [Blueprints and Views](#blueprints-and-views)
+4. [Templates](#templates)
+5. [Static Files](#static-files)
+6. [A Second Blueprint](#a-second-blueprint)
 
 
 ****

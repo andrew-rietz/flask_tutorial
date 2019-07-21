@@ -21,7 +21,7 @@ bp = Blueprint("auth", __name__, url_prefix="/auth")
 # Associate the view with its blueprint using bp.route
 # When Flask receives a request to /auth/register, it will call the
 # register view and use the returned value as the response
-@bp.route("/register", methods = ("GET", "POST"))
+@bp.route("/register", methods=("GET", "POST"))
 def register():
     """
     Checks inputs from the login form
@@ -61,7 +61,7 @@ def register():
         # the application with SQL Injection
         # ********************************************************
         elif db.execute(
-            "SELECT id FROM user WHERE username = ?", (username,)
+                "SELECT id FROM user WHERE username = ?", (username,)
         ).fetchone() is not None:
             error = f"User {username} is already registered."
 

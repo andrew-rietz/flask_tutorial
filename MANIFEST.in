@@ -1,0 +1,4 @@
+include our_flask_app/schema.sql
+graft our_flask_app/static
+graft our_flask_app/templates
+global-exclude *.pyc

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!--
+      "block title" will change the title displayed in
+      the tab and window title
+    -->
+    <title>{% block title %}{% endblock %} - OurFlaskApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <nav>
+      <h1>OurFlaskApp</h1>
+      <ul>
+        {% if g.user %}
+          <li><span>{{ g.user["username"] }}</span></li>
+          <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        {% else %}
+          <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+          <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </head>
+  <body>
+    <section class="content">
+      <header>
+        <!--
+          "block header" will change the title displayed on
+          the page
+        -->
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">
+          {{ message }}
+        </div>
+      {% endfor %}
+      <!--
+        "block content" is where the content of each page
+        goes, such as the login form or a blog post
+      -->
+      {% block content %}{% endblock %}
+    </section>
+  </body>
+</html>

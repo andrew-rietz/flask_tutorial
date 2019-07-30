@@ -12,10 +12,11 @@ a SQLite database for simplicity.
 4. [Templates](#templates)
 5. [Static Files](#static-files)
 6. [A Second Blueprint](#a-second-blueprint)
+7. [Make the Project Installable](#make-the-project-installable)
 
 
 ****
-#### Application Setup
+## Application Setup
 [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/tutorial/factory/)  
 The most straightforward way to create a Flask application is to
 create a global Flask instance directly at the top of your code.
@@ -32,13 +33,15 @@ returned.
 
 > Test Application Works
 
-`export FLASK_APP=our_flask_app`  
-`export FLASK_ENV=development`  
-`flask run`
+```
+export FLASK_APP=our_flask_app
+export FLASK_ENV=development
+flask run
+```
 
 
 ****
-#### Define and Access Database
+## Define and Access Database
 [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/tutorial/database/)  
 > Connect to the database
 
@@ -71,7 +74,7 @@ using the `flask` command, similar to the `flask run` command above.
 
 
 ****
-#### Blueprints and Views
+## Blueprints and Views
 [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/tutorial/views/)  
 A `view` function is the code you write to respond to requests to
 your application. The view returns data that Flask turns into an
@@ -94,7 +97,7 @@ we'll write the authentication blueprint first.
 
 
 ****
-#### Add views to the Blueprint
+## Add views to the Blueprint
 The authentication blueprint will have views to register new users
 and to log in and log out.
 > View 1: Register
@@ -149,7 +152,7 @@ Example usage with blueprint:
 
 
 ****
-#### Templates
+## Templates
 [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/tutorial/templates/)  
 Before your views can render on the server, we need to write the
 `templates`. Our views are all calling `render_template()`, which,
@@ -217,7 +220,7 @@ Identical to register, except for a couple labels
 
 
 ****
-#### Static Files
+## Static Files
 [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/tutorial/static/)
 
 The authentication views and templates work, but they look very
@@ -237,7 +240,7 @@ the `our_flask_app/static` directory and referenced with
 
 
 ****
-#### A Second Blueprint
+## A Second Blueprint
 You can create more than one `blueprint` for a given app. We'll
 create a blog blueprint that should list all posts, allow logged
 in users to create posts, and allow the author of a post to edit
@@ -334,7 +337,7 @@ Congratulations, you’ve now finished writing your application! Take some time 
 ****
 
 
-#### Make the Project Installable
+## Make the Project Installable
 [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/tutorial/install/)
 
 Making your project installable means that you can build a
